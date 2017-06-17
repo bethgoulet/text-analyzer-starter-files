@@ -29,3 +29,20 @@ function averageWordLength(rawText) {
   }
   return totalCharacters/words.length;
 }
+
+
+
+function displayResults(rawText){
+  $('.js-form').submit(function(event){
+    event.preventDefault();
+    var wordCount = getWords(rawText);
+    var uniqueCount = uniqueWordCount(rawText);
+    var avgLength = averageWordLength(rawText);
+    $('.js-word-count').text('wordCount');
+    $('.js-unique-word-count').text('uniqueCount');
+    $('.js-average-word-length').text('avgLength');
+  })
+  $ -- remove hidden class
+}
+
+run the function
