@@ -38,8 +38,8 @@ function displayResults(rawText){
     $('.js-word-count').text('wordCount');
     $('.js-unique-word-count').text('uniqueCount');
     $('.js-average-word-length').text('avgLength');
+    $('.js-report').removeClass('hidden');
   })
-  $('.js-report').removeClass('hidden');
 }
 
 $(function() {
