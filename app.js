@@ -48,6 +48,7 @@ function analyzeText(){
   var text = $(this).find(
       'input[name="user-text"]').val();
   displayResults(text);
+});
 }
                        
 $(function() {
