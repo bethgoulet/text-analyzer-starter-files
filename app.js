@@ -20,7 +20,7 @@ function uniqueWordCount(words) {
 
 function averageWordLength(words) {
   var totalCharacters = words.join("").length;
-  return (totalCharacters/words.length).toFixed(1);
+  return (totalCharacters / words.length).toFixed(1);
 }
 
 function displayResults(rawText){
