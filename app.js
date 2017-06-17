@@ -20,7 +20,6 @@ function uniqueWordCount(rawText) {
   return uniqueCount.length;
 }
 
-
 function averageWordLength(rawText) {
   var totalCharacters = 0;
   var words = getWords(rawText);
@@ -29,8 +28,6 @@ function averageWordLength(rawText) {
   }
   return totalCharacters/words.length;
 }
-
-
 
 function displayResults(rawText){
   $('.js-form').submit(function(event){
