@@ -1,12 +1,11 @@
 // your code here!
 
 function getWords(rawText) {
-  return rawText.toLowerCase().split(/[ ,!.";:-]+/).filter(Boolean).sort();
+  return rawText.toLowerCase().match(/\b[^\s]+\b/g).sort();
 }
 
-function wordCount(rawText) {
-  var count = getWords(rawText);
-  return count.length;
+function removeReturns(rawText) {
+  return rawText.replace(/\r?\n|\r/g, "");
 }
 
 function uniqueWordCount(rawText) {
@@ -30,10 +29,10 @@ function averageWordLength(rawText) {
 }
 
 function displayResults(rawText){
-    var totalWords = wordCount;
+    var wordCount = getWords(rawText).length;
     var uniqueCount = uniqueWordCount;
     var avgLength = averageWordLength;
-    $('.js-word-count').text(totalWords);
+    $('.js-word-count').text(wordCount);
     $('.js-unique-word-count').text(uniqueCount);
     $('.js-average-word-length').text(avgLength);
     $('.js-report').removeClass('hidden');
