@@ -14,7 +14,7 @@ function uniqueWordCount(rawText) {
   var uniqueCount = [];
   for (i=0; i < words.length; i++){
     if (!(words[i] in uniqueCount)) {
-      uniqueCount.push(words[i])
+      uniqueCount.push(words[i]);
     }
   }
   return uniqueCount.length;
