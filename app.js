@@ -8,9 +8,14 @@ function removeReturns(rawText) {
   return rawText.replace(/\r?\n|\r/g, "");
 }
 
+function averageWordLength(words) {
+  var totalCharacters = words.join("").length;
+  return (totalCharacters / words.length).toFixed(1);
+}
+
 function uniqueWordCount(words) {
   var uniqueCount = [];
-  for (i=0; i < words.length; i++){
+  for (var i=0; i < words.length; i++){
     if (uniqueCount.indexOf(words[i]) === -1) {
       uniqueCount.push(words[i]);
     }
@@ -18,10 +23,7 @@ function uniqueWordCount(words) {
   return uniqueCount.length;
 }
 
-function averageWordLength(words) {
-  var totalCharacters = words.join("").length;
-  return (totalCharacters / words.length).toFixed(1);
-}
+
 
 function displayResults(rawText){
     var wordCount = getWords(rawText).length;
