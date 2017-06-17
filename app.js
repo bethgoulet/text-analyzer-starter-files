@@ -25,8 +25,8 @@ function uniqueWordCount(words) {
 
 function displayResults(text){
     var wordCount = getWords(text).length;
-    var uniqueCount = uniqueWordCount(words);
-    var avgLength = averageWordLength(words);
+    var uniqueCount = uniqueWordCount(text);
+    var avgLength = averageWordLength(text);
   
     $('.js-report').find('.js-word-count').text(wordCount);
     $('.js-report').find('.js-unique-word-count').text(uniqueCount);
