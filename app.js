@@ -42,7 +42,9 @@ function displayResults(rawText){
     $('.js-unique-word-count').text('uniqueCount');
     $('.js-average-word-length').text('avgLength');
   })
-  $ -- remove hidden class
+  $('.js-report').removeClass('hidden');
 }
 
-run the function
+$(function() {
+  displayResults();
+});
