@@ -52,5 +52,5 @@ function analyzeText(){
 }
                        
 $(function() {
-  displayResults();
+  analyzeText();
 });
