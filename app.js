@@ -36,7 +36,7 @@ function displayResults(rawText){
     $('.js-word-count').text('totalWords');
     $('.js-unique-word-count').text('uniqueCount');
     $('.js-average-word-length').text('avgLength');
-    
+    $('.js-report').removeClass('hidden');
   })
 }
 
@@ -46,9 +46,8 @@ function analyzeText(){
   $(".js-word-count").empty();
   $(".js-unique-word-count").empty();
   $(".js-average-word-length").empty();
-  var text = parseInt( $(event.currentTarget).find(
-      'input[name="user-text"]').val());
-  $('.js-report').removeClass('hidden');
+  var text = $(this).find(
+      'input[name="user-text"]').val();
   displayResults(text);
 }
                        
