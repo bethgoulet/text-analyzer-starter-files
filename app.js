@@ -8,24 +8,19 @@ function removeReturns(rawText) {
   return rawText.replace(/\r?\n|\r/g, "");
 }
 
-function uniqueWordCount(rawText) {
-  var words = getWords(rawText);
+function uniqueWordCount(words) {
   var uniqueCount = [];
   for (i=0; i < words.length; i++){
-    if (!(words[i] in uniqueCount)) {
+    if (uniqueCount.indexOf(words[i]) === -1) {
       uniqueCount.push(words[i]);
     }
   }
   return uniqueCount.length;
 }
 
-function averageWordLength(rawText) {
-  var totalCharacters = 0;
-  var words = getWords(rawText);
-  for (i=0; i < words.length; i++) {
-    totalCharacters += words[i].length;
-  }
-  return totalCharacters/words.length;
+function averageWordLength(words) {
+  var totalCharacters = words.join("").length;
+  return )totalCharacters/words.length).toFixed(1);
 }
 
 function displayResults(rawText){
