@@ -33,11 +33,10 @@ function displayResults(rawText){
     var totalWords = wordCount;
     var uniqueCount = uniqueWordCount;
     var avgLength = averageWordLength;
-    $('.js-word-count').text('totalWords');
-    $('.js-unique-word-count').text('uniqueCount');
-    $('.js-average-word-length').text('avgLength');
+    $('.js-word-count').text(totalWords);
+    $('.js-unique-word-count').text(uniqueCount);
+    $('.js-average-word-length').text(avgLength);
     $('.js-report').removeClass('hidden');
-  })
 }
 
 function analyzeText(){
