@@ -1,11 +1,11 @@
 // your code here!
 
-function getWords(rawText) {
-  return rawText.toLowerCase().match(/\b[^\s]+\b/g).sort();
+function getWords(text) {
+  return text.toLowerCase().match(/\b[^\s]+\b/g).sort();
 }
 
-function removeReturns(rawText) {
-  return rawText.replace(/\r?\n|\r/g, "");
+function removeReturns(text) {
+  return text.replace(/\r?\n|\r/g, "");
 }
 
 function averageWordLength(words) {
@@ -15,7 +15,7 @@ function averageWordLength(words) {
 
 function uniqueWordCount(words) {
   var uniqueCount = [];
-  for (var i=0; i < words.length; i++){
+  for (var i=0; i < words.length; i++) {
     if (uniqueCount.indexOf(words[i]) === -1) {
       uniqueCount.push(words[i]);
     }
@@ -23,27 +23,23 @@ function uniqueWordCount(words) {
   return uniqueCount.length;
 }
 
-
-
-function displayResults(rawText){
-    var wordCount = getWords(rawText).length;
-    var uniqueCount = uniqueWordCount;
-    var avgLength = averageWordLength;
-    $('.js-word-count').text(wordCount);
-    $('.js-unique-word-count').text(uniqueCount);
-    $('.js-average-word-length').text(avgLength);
-    $('.js-report').removeClass('hidden');
+function displayResults(text){
+    var wordCount = getWords(text).length;
+    var uniqueCount = uniqueWordCount(words);
+    var avgLength = averageWordLength(words);
+  
+    $('.js-report').find('.js-word-count').text(wordCount);
+    $('.js-report').find('.js-unique-word-count').text(uniqueCount);
+    $('.js-report').find('.js-average-word-length').text(avgLength);
+    
+  $('.js-report').removeClass('hidden');
 }
 
-function analyzeText(){
-  $('.js-form').submit(function(event){
+function analyzeText() {
+  $('.js-form').submit(function(event) {
     event.preventDefault();
-  $(".js-word-count").empty();
-  $(".js-unique-word-count").empty();
-  $(".js-average-word-length").empty();
-  var text = $(this).find(
-      'input[name="user-text"]').val();
-  displayResults(text);
+  var text = $(this).find('#user-text').val();
+  displayResults(removeReturns(text));
 });
 }
                        
